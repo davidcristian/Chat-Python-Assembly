@@ -12,11 +12,13 @@
 #include <thread>
 #include <string.h>
 
-#define SERVER_IP "192.168.0.250"
+#define SERVER_IP "192.168.144.128"
 #define SERVER_PORT 7777
 
-#define CONN_FAMILY AF_INET
 #define BUFFER_SIZE 255  // intetionally 255 and not 256
+#define CONN_FAMILY AF_INET
+#define SOCK_TYPE SOCK_STREAM
+#define SOCK_PROTOCOL IPPROTO_TCP
 
 void inputThread(SOCKET& sock, std::string& name, bool& quit)
 {
@@ -76,7 +78,7 @@ int main()
 		return 1;
 	}
 
-	SOCKET sock = socket(CONN_FAMILY, SOCK_STREAM, IPPROTO_TCP);
+	SOCKET sock = socket(CONN_FAMILY, SOCK_TYPE, SOCK_PROTOCOL);
 	if (sock == INVALID_SOCKET)
 	{
 		std::cout << "ERROR: socket()" << std::endl;
