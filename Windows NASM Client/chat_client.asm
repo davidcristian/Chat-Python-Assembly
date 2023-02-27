@@ -38,7 +38,7 @@ segment data use32 class=data
     buffer_print_format db "%s", 10, 0
     
     ; CONSTANTS
-    SERVER_IP db "192.168.0.250", 0
+    SERVER_IP db "127.0.0.1", 0
     SERVER_PORT dw 7777
     BUFFER_LEN equ 255      ; 1 off because we add the null char ourselves
 

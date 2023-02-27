@@ -12,7 +12,7 @@
 #include <thread>
 #include <string.h>
 
-#define SERVER_IP "192.168.144.128"
+#define SERVER_IP "127.0.0.1"
 #define SERVER_PORT 7777
 
 #define BUFFER_SIZE 255  // intetionally 255 and not 256
